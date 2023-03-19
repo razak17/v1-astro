@@ -1,0 +1,137 @@
+---
+import { footerLinks, navLinks } from "../data";
+import IconGitHub from "./icons/github.astro";
+import IconTwitter from "./icons/twitter.astro";
+---
+
+<footer class="bg_primary footer_container">
+  <div class="container footer_grid">
+    <div>
+      <h2>Razak Mo</h2>
+      <p class="text_transparent">Software Developer</p>
+      <ul class="social_list">
+        <li>
+          <a href="https://github.com/razak17" target="_blank" rel="noreferrer">
+            <IconGitHub />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://twitter.com/theRazakMo"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <IconTwitter />
+          </a>
+        </li>
+      </ul>
+      <p class="copy_text">&copy; 2022 Razak Mo</p>
+    </div>
+    <div>
+      <ul>
+        {
+          navLinks.map((item) => (
+            <li class="footer_item">
+              <a class="footer_link" href={item.url}>
+                {item.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div>
+      <ul>
+        {
+          footerLinks.map((item) => (
+            <li class="footer_item">
+              <a class="footer_link" href={item.url}>
+                {item.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <p class="text_transparent contact_text">
+        Are you interested in working together?
+      </p>
+      <a href="#contact" class="btn btn_cta"> Get In touch</a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer_container {
+    overflow: hidden;
+    padding: 4rem 0;
+  }
+
+  .footer_container h3,
+  .footer_container h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .footer_link {
+    color: var(--transparent-color);
+    text-transform: capitalize;
+  }
+
+  .footer_link:hover {
+    color: var(--light-color);
+  }
+
+  .footer_item {
+    padding: 0.4rem;
+  }
+
+  .contact_text {
+    width: 240px;
+    padding-bottom: 3rem;
+  }
+
+  .social_list {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 60px;
+    list-style: none;
+  }
+
+  .social_list li a {
+    padding: 0.4rem;
+  }
+
+.copy_text {
+    color: var(--transparent-color);
+    margin-top: 2rem;
+  }
+
+  .me > a {
+    cursor: pointer;
+  }
+
+  @media (max-width: 824px) {
+    .footer_grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 568px) {
+    .footer_grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

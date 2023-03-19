@@ -51,3 +51,16 @@ svg {
 .feather {
   fill: none;
 }
+
+.feather-twitter,
+.feather-linkedin,
+.feather-github {
+  width: 30px;
+  height: 30px;
+}
+
+.feather-twitter:hover,
+.feather-linkedin:hover,
+.feather-github:hover {
+  color: var(--btn-primary-hover);
+}
