@@ -1,14 +1,14 @@
 # Roadmap
 
 ## Main
-- [X] Layout
-- [ ] Navbar
-- [ ] Showcase
-- [ ] About
+- [x] Layout
+- [x] Navbar
+- [x] Banner
+- [x] About
 - [ ] Featured
 - [ ] Projects
 - [ ] Contact
-- [ ] Footer
+- [x] Footer
 - [ ] Contact Form Handling
 - [ ] Toast
 
