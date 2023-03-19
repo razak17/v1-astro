@@ -1,0 +1,63 @@
+---
+---
+
+<div class="showcase">
+  <div class="container showcase_grid">
+    <div>
+      <h1 class="lg">Full Stack Software Developer</h1>
+      <p class="text_transparent lead">
+        I am a full stack software developer. I enjoy writing backends in node
+        and golang. I also enjoy writing automation scripts in python.
+      </p>
+      <a href="#contact" class="btn btn_cta"> Get In touch</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .showcase {
+    height: calc(100vh - 180px);
+    background-color: var(--primary-color);
+    color: #fff;
+    position: relative;
+  }
+
+  .showcase p {
+    padding-top: 1rem;
+  }
+
+  .showcase a {
+    margin-top: 2rem;
+  }
+
+  .showcase_grid {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    overflow: visible;
+    grid-template-columns: 55% auto;
+    gap: 30px;
+  }
+
+  .showcase::before,
+  .showcase::after {
+    content: "";
+    position: absolute;
+    height: 80px;
+    bottom: -50px;
+    right: 0;
+    left: 0;
+    background: var(--light-color);
+    transform: skewY(-3deg);
+    -webkit-transform: skewY(-3deg);
+    -moz-transform: skewY(-2deg);
+    -ms-transform: skewY(-3deg);
+  }
+
+  @media (max-width: 768px) {
+    .showcase_grid {
+      grid-template-columns: 75% auto;
+    }
+  }
+</style>
