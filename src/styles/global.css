@@ -45,22 +45,30 @@ svg {
   height: 100%;
   fill: var(--alert-color);
   vertical-align: middle;
-  color: var(--transparent-color);
 }
 
 .feather {
   fill: none;
+  color: var(--transparent-color);
 }
 
-.feather-twitter,
-.feather-linkedin,
-.feather-github {
+.project_icon {
+  width: 22px;
+  height: 22px;
+  color: var(--primary-color);
+}
+
+.project_icon:hover,
+.project_icon:focus {
+  color: var(--secondary-color);
+}
+
+.footer_icon {
   width: 30px;
   height: 30px;
 }
 
-.feather-twitter:hover,
-.feather-linkedin:hover,
-.feather-github:hover {
+.footer_icon:hover,
+.footer_icon:focus {
   color: var(--btn-primary-hover);
 }

@@ -1,0 +1,140 @@
+---
+import { projects } from "../../data";
+import IconGitHub from "../icons/github.astro";
+import IconExternal from "../icons/external.astro";
+---
+
+<section id="projects" class="container section">
+  <h1 class="md text_primary text_center">Featured Projects</h1>
+  <div class="text_center m1">
+    <p class="lead">
+      Here are some of my work that I&apos;ve done in various programming
+      languages.
+    </p>
+  </div>
+
+  <div class="work_grid">
+    {
+      projects.map((project) => (
+        <div class="work_item">
+          <div class="work_frame">
+            <div class="image">
+              <img src={project.image} alt="" />
+            </div>
+            <div>
+              <a href={project.external} target="_blank" rel="noreferrer">
+                <h3>{project.title}</h3>
+              </a>
+              <p>{project.description}</p>
+              <ul class="tech_list">
+                {project.tech.map((item) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+
+              <div class="icons">
+                {project.github && (
+                  <a href={project.github} target="_blank" rel="noreferrer">
+                    <IconGitHub project />
+                  </a>
+                )}
+                {project.external && (
+                  <a href={project.external} target="_blank" rel="noreferrer">
+                    <IconExternal />
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .work_grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    grid-gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .work_item {
+    position: relative;
+    border-radius: 5px;
+  }
+
+  .work_frame {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px -15px var(--box-shadow);
+    transition: var(--transition);
+  }
+
+  .image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+    mix-blend-mode: multiply;
+    filter: grayscale(40%) contrast(1) brightness(90%);
+  }
+
+  .work_frame .image img:hover {
+    filter: grayscale(0%) contrast(1) brightness(100%);
+  }
+
+  .work_frame h3 {
+    margin: 2rem 0 1rem 0;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+  }
+
+  .work_frame p {
+    font-size: 1rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+
+  .tech_list {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 0.4rem;
+    padding: 0;
+    list-style: none;
+    color: var(--secondary-color);
+  }
+
+  .tech_list li {
+    font-size: 1rem;
+    margin: 0 20px 5px 0;
+    white-space: nowrap;
+  }
+
+  .work_frame .icons {
+    display: flex;
+    align-items: center;
+  }
+
+  .work_frame .icons a {
+    padding: 0 1rem 0 0;
+    cursor: pointer;
+  }
+
+  @media (max-width: 480px) {
+    .image {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .work_grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

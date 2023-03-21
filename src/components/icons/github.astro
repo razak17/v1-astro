@@ -1,4 +1,9 @@
 ---
+const { project } = Astro.props;
+
+interface Props {
+  project?: boolean;
+}
 ---
 
 <svg
@@ -10,7 +15,7 @@
   stroke-width="2"
   stroke-linecap="round"
   stroke-linejoin="round"
-  class="feather feather-github"
+  class={`${project ? "feather project_icon" : "feather footer_icon"}`}
 >
   <title>GitHub</title>
   <path

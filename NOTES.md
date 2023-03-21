@@ -5,7 +5,7 @@
 - [x] Navbar
 - [x] Banner
 - [x] About
-- [ ] Featured
+- [X] Featured
 - [ ] Projects
 - [ ] Contact
 - [x] Footer
